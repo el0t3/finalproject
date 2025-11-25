@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Unicode Converter</title>
+
+<style>
+body {
+    background: #e3f2fd;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #0d47a1;
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+/* Input Panel */
+.panel {
+    width: 70%;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,200,0.2);
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #0d47a1;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #1565c0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0d47a1;
+}
+
+/* Output box */
+.output {
+    width: 60%;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,200,0.2);
+    font-size: 60px;
+}
+
+img {
+    width: 80%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Unicode Converter</h1>
+
+<div class="panel">
+    <p>Enter a Unicode number (example: <b>1F600</b> for 😀)</p>
+
+    <input type="text" id="uniInput" placeholder="Enter Unicode">
+    <button onclick="convertUnicode()">Submit</button>
+</div>
+
+<div class="output" id="resultBox">
+    —
+</div>
+
+<!-- TABLE IMAGE FROM UPLOAD -->
+<img id="uni" src="uni1.jpg" width="50">
+<img id="uni" src="uni3.jpg" width="50">
+<img id="uni" src="uni4.jpg" width="50">
+<script>
+function convertUnicode() {
+    const val = document.getElementById("uniInput").value.trim();
+
+    if (val === "") {
+        document.getElementById("resultBox").innerHTML = "⚠ Enter a value!";
+        return;
+    }
+
+    let unicodeNumber = parseInt(val, 16);
+
+    if (isNaN(unicodeNumber)) {
+        document.getElementById("resultBox").innerHTML = "❌ Invalid Unicode!";
+        return;
+    }
+
+    document.getElementById("resultBox").innerHTML = String.fromCodePoint(unicodeNumber);
+}
+</script>
+
+</body>
+</html>

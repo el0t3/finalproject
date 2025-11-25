@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Binary to Hex Converter</title>
+
+<style>
+/* LIGHT BLUE THEME */
+body {
+    background: #d7e9ff;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #0d47a1;
+    font-size: 40px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.panel {
+    background: #bcd4ff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 20px rgba(30, 80, 200, 0.3);
+    border: 2px solid #6fa8ff;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #0d47a1;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+button {
+    background: #0d47a1;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #08306b;
+}
+
+.outputBox {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #0d47a1;
+    font-size: 22px;
+    color: #0d47a1;
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Binary to Hex Converter</h1>
+
+<div class="container">
+
+    <div class="panel">
+        <strong>Enter Binary Number:</strong><br>
+        <input type="text" id="binaryInput" placeholder="e.g. 11001010">
+
+        <button onclick="convertToHex()">Convert</button>
+
+        <div id="output" class="outputBox">Hex: </div>
+    </div>
+
+</div>
+
+<script>
+function convertToHex() {
+    let bin = document.getElementById("binaryInput").value.trim();
+
+    // VALIDATE BINARY
+    if (!/^[01]+$/.test(bin)) {
+        document.getElementById("output").innerText = "Hex: INVALID BINARY";
+        return;
+    }
+
+    // Convert binary → integer → hex
+    let hex = parseInt(bin, 2).toString(16).toUpperCase();
+
+    document.getElementById("output").innerText = "Hex: " + hex;
+}
+</script>
+
+</body>
+</html>
