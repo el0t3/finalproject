@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Instructions</title>
+    <style>
+        /* GLOBAL THEME (matching your other pages) */
+        body {
+            background-color: #b3d1ff; /* Light blue background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid black;
+            margin-top: 20px;
+        }
+
+        /* BUTTON STYLE (same across all pages) */
+        button {
+            width: 150px;
+            padding: 12px;
+            margin: 8px;
+            background-color: #e6f0ff; 
+            border: 2px solid black;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #cce0ff;
+        }
+
+        img {
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            padding: 8px 15px;
+            border: 2px solid black;
+            background-color: white;
+        }
+
+        a:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Machine Language Instructions</h1>
+
+        <div class="box">
+
+            <h2>Click an Instruction</h2>
+
+            <!-- BUTTONS -->
+            <button onclick="setML('ML1.png', 'EI1.png')">156C</button>
+            <button onclick="setML('ML2.png', 'EI2.png')">166D</button>
+            <button onclick="setML('ML3.png', 'EI3.png')">5056</button>
+            <button onclick="setML('ML4.png', 'EI4.png')">306E</button>
+            <button onclick="setML('ML5.png', 'EI5.png')">C000</button>
+
+            <!-- IMAGES -->
+            <div style="margin-top: 20px;">
+                <img id="MLinstrucitons" src="MLblank.png">
+                <img id="Englishinstrucitons" src="">
+            </div>
+
+
+    <script>
+        function setML(ml, ei) {
+            document.getElementById("MLinstrucitons").src = ml;
+            document.getElementById("Englishinstrucitons").src = ei;
+        }
+    </script>
+
+</body>
+</html>
